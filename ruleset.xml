@@ -30,6 +30,9 @@
         <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeCloseParenthesis" />
         <exclude name="WordPress.Arrays.ArrayDeclaration.NoSpaceAfterOpenParenthesis" />
 
+        <!-- No spaces around array keys, not even variables -->
+        <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions.NoSpacesAroundArrayKeys" />
+
         <!-- Disallow spaces around ! operator -->
         <exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore" />
         <exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter" />
