@@ -8,11 +8,6 @@
     <rule ref="Generic.Commenting.Todo" />
     <rule ref="Generic.ControlStructures.InlineControlStructure" />
 
-    <!-- Remove need for comments above files, classes and functions -->
-    <exclude name="Squiz.Commenting.FileComment.Missing" />
-    <exclude name="Squiz.Commenting.ClassComment.Missing" />
-    <exclude name="Squiz.Commenting.FunctionComment.Missing" />
-
     <!-- Exclude certain WordPress standards to accommodate VO standards -->
     <rule ref="WordPress-Core">
         <!-- Allow THEME_SLUG for internationalization -->
@@ -32,10 +27,6 @@
 
         <!-- No spaces around array keys, not even variables -->
         <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions.NoSpacesAroundArrayKeys" />
-
-        <!-- Disallow spaces around ! operator -->
-        <exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore" />
-        <exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter" />
     </rule>
 
     <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing" />
