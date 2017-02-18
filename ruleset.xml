@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<ruleset name="DPStandard">
+    <description>Daniel Post WordPress Coding Standards - Largely based on standard WordPress coding standards with a few additions and exceptions.</description>
+
+    <!-- Include specific rules -->
+    <rule ref="Squiz.PHP.CommentedOutCode" />
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter" />
+    <rule ref="Generic.Commenting.Todo" />
+    <rule ref="Generic.ControlStructures.InlineControlStructure" />
+
+    <!-- Remove need for comments above files, classes and functions -->
+    <exclude name="Squiz.Commenting.FileComment.Missing" />
+    <exclude name="Squiz.Commenting.ClassComment.Missing" />
+    <exclude name="Squiz.Commenting.FunctionComment.Missing" />
+
+    <!-- Exclude certain WordPress standards to accommodate VO standards -->
+    <rule ref="WordPress-Core">
+        <!-- Allow THEME_SLUG for internationalization -->
+        <exclude name="WordPress.WP.I18n.NonSingularStringLiteralDomain" />
+
+        <!-- Exclude Yoda conditions -->
+        <exclude name="WordPress.PHP.YodaConditions"/>
+
+        <!-- Use spaces instead of tabs -->
+        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
+        <exclude name="Generic.WhiteSpace.ScopeIndent" />
+
+        <!-- Disallow spaces after opening bracket and before closing bracket -->
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeCloseParenthesis" />
+        <exclude name="WordPress.Arrays.ArrayDeclaration.NoSpaceAfterOpenParenthesis" />
+
+        <!-- Disallow spaces around ! operator -->
+        <exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore" />
+        <exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter" />
+    </rule>
+
+    <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing" />
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+        <properties>
+            <property name="equalsSpacing" value="1" />
+            <property name="requiredSpacesAfterOpen" value="0" />
+            <property name="requiredSpacesBeforeClose" value="0" />
+        </properties>
+    </rule>
+
+    <exclude name="PEAR.Functions.FunctionCallSignature" />
+    <rule ref="PEAR.Functions.FunctionCallSignature">
+        <properties>
+            <property name="requiredSpacesAfterOpen" value="0" />
+            <property name="requiredSpacesBeforeClose" value="0" />
+        </properties>
+    </rule>
+
+    <rule ref="PSR2.ControlStructures.ControlStructureSpacing.SpaceAfterOpenBrace" />
+    <rule ref="PSR2.ControlStructures.ControlStructureSpacing.SpaceBeforeCloseBrace" />
+
+    <!-- Use spaces instead of tabs -->
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="indent" value="4" />
+            <property name="tabIndent" value="false" />
+        </properties>
+    </rule>
+    <arg name="tab-width" value="4" />
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent" />
+
+    <!-- Ignore unused function parameters -->
+    <exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.Found" />
+</ruleset>
